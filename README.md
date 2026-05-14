@@ -16,7 +16,7 @@
 
 ![adv](./images/ad.png)
 
-### 错误的示例
+### 不应该这样做
 
 这种直接使用 index 来解析 `byte[]` 的方式，会出现解析到不同的结构体。`
 
@@ -32,7 +32,7 @@ fun decode(data: ByteArray) {
 }
 ```
 
-### 正确的示例
+### 应该这样做
 
 应该先通过 `type` 拿到 `struct`, 再解析 `struct` 里的 `data`。
 
