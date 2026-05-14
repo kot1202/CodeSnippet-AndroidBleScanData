@@ -39,7 +39,7 @@ fun decode(data: ByteArray) {
 ```kotlin
 fun decode(data: ByteArray) {
     val scanData = data.toScanData()
-    val scanStruct = scanData.get(AdType.MANUFACTURER_SPECIFIC_DATA)
+    val scanStruct = scanData.get(AdType.MANUFACTURER_SPECIFIC_DATA).find { it.intLength == 9 }
     if (null != scanStruct) {
         val rawData = scanStruct.rawData!!
         val year = rawData[index]
